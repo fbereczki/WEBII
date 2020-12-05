@@ -12,12 +12,10 @@ class Regisztralt_Controller
           'csaladi_nev' => trim($vars['csaladi_nev']),
           'utonev' => trim($vars['utonev']),
 		  'bejelentkezes' => trim($vars['login_nev']),
-		  'email' => trim($vars['email']),
-          'jelszo' => trim($vars['jelszo_reg']),         
+		  'jelszo' => trim($vars['jelszo_reg']),         
 		  'csaladi_nev_error' => "",
 		  'utonev_error' => "",
 		  'bejelentkezes_error' => "",
-		  'email_error' => "",
 		  'jelszo_error' => "",
 		  
 
@@ -34,7 +32,7 @@ class Regisztralt_Controller
         } elseif (!preg_match($nameValidation, $data['utonev'])) {
           $data['utonev_error'] = 'Az utónév csak betűket tartalmazhat.';
         }
-		if (empty($data['email'])) {
+		/*if (empty($data['email'])) {
           $data['email_error'] = 'Adja meg az email címet';
         } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
           $data['email_error'] = 'Írja be a helyes formátumot';
@@ -43,7 +41,7 @@ class Regisztralt_Controller
 		else {
           if ($regisztralModel->letezoEmail($data['email'])) {
             $data['email_error'] = 'Ez az email cím már létezik';
-		}}
+		}}*/
 		if (empty($data['jelszo'])) {
           $data['jelszo_error'] = 'Adja meg a jelszót';
         } 
@@ -65,7 +63,6 @@ class Regisztralt_Controller
           empty($data['csaladi_nev_error']) && 
           empty($data['utonev_error']) &&
 		  empty($data['bejelentkezes_error']) &&
-          empty($data['email_error']) &&
           empty($data['jelszo_error']) 
           
         ) {

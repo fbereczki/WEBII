@@ -8,10 +8,10 @@ class Regisztral_Model
 		try{
 			$connection = Database::getConnection();
 			$sql = "insert into felhasznalok values(0, :csaladi_nev, :utonev, 
-			:bejelentkezes, :email, sha1(:jelszo), DEFAULT)";
+			:bejelentkezes, sha1(:jelszo), DEFAULT)";
 			$sth = $connection->prepare($sql);
 			if($sth->execute(Array(':csaladi_nev' => $vars['csaladi_nev'], ':utonev' => $vars['utonev'],
-			':bejelentkezes' => $vars['bejelentkezes'], ':email' => $vars['email'], 
+			':bejelentkezes' => $vars['bejelentkezes'], 
 			':jelszo' => $vars['jelszo']
 			
 			)))
@@ -33,7 +33,7 @@ class Regisztral_Model
 		}
 		return $retData;
 	}
-	public function letezoEmail($email)
+	/*public function letezoEmail($email)
 	{
 		try
 		{
@@ -52,7 +52,7 @@ class Regisztral_Model
 			return false;
 			
 		}
-	}
+	}*/
 	public function letezoBejelentkezes($bejelentkezes)
 	{
 		try
