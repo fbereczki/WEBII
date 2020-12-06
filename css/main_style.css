@@ -1,46 +1,160 @@
-header, footer {
-    padding: 0.5em; 
-    color: white;
-    background-color: gray;
-    clear: left;
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300&subset=latin-ext');
+html, body 
+{
+height: 100%;
+margin: 0;
+color:white;
+text-align:center;
 }
-h1.header {
-    padding: 0;
-    margin: 0;
-}
-div#user {
-    float: right;
-}
-aside {
-    float: left;
-    width: 160px;
-    margin: 0;
-    padding: 1em;
-}
-section {
-    margin-left: 190px;
-    border-left: 1px solid gray;
-    padding: 1em;
-}
-ul {
-    float:left;
-    width:100%; /* A menü az alatta levő szövegtől elválik, birtokolja a teljes vízszintes sávját. */
-    padding:0;
-    margin:0;
-    list-style-type:none;
-    background-color: lightblue;
-}        
-a {
-    float:left;
-    width:6em; /* Fix szélességű gombok érhetők el. Érdemes azonban vigyázni ezzel a módszerrel, mert ha a szöveg nem fér ki, a dizájn szétesik. */
-    text-decoration:none; /* Ne legyen aláhúzva a link. */
-    color:white;
-    background-color:navy;
-    padding:0.2em 0.6em;
+
+
+.fkozep{
+	position:absolute;
+	top:30%;
+	transform:translate(0%,-50%);
+	-webkit-transform:translate(0%,-50%);
+	margin-button: -50%;
+	}
+.vkozep{
+	position:absolute;
+	left:50%;
+	transform:translate(-50%,0);
+	-webkit-transform:translate(-50%,0);
+	margin-right:-50%;
+	}
+.background {
+	background-image: url("../pics/background.jpg"); 
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:center;		
+	}
+.tokkozepre{
+	position:absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform:transform(-50%, -50%);
+	margin-right: -50%;
+	margin-bottom: -50%;
+	}
+.cim{
+	font-family:'work sans', sans-serif;
+	font-size:70px;
+	}
+.fullscreen-bg {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: -100;
+	}
+.fullscreen-bg__video{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: auto;
+	height: auto;
+	min-width: 100%;
+	min-height: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	}
+.formazas{
+	overflow: hidden;
+	}
+.lablec{
+	bottom:0;
+	}
+
+.felsomenu{
+	margin: 0 10px;
+	}
+.gomb{
+	font-size:16px;
+	background-color:rgba(0,0,0,0.5);
+	padding: 12px;
+	width: 200px;
+	display:inline-block;
+	}
+a{
+	font-size:16px;
+	background-color:rgba(0,0,0,0.5);
+	padding: 12px;
+	width: 200px;
+	display:inline-block;
+	color:white;
+	text-decoration:none;
+	
     border-right:1px solid white;
-}
+	}
+li { display:inline }
+
+.gomb:hover{
+	filter:invert(100%);
+	}
+a:hover{
+	filter:invert(100%);
+	}
+	
 a.selected{
-    background-color: blue;
+    filter:invert(100%)
 }
-a:hover { background-color:#ff3300} /* Az egérkurzorra színváltással reagál a menüpont. */
-li { display:inline } /* Ez a sor oldja meg, hogy a menüpontok egymás mellé kerüljenek. */
+	
+	@media (max-width: 767px){
+.mobilonne{
+	display:none;
+	}	
+.cim {
+	font-size:50px;
+	}
+	@media (max-height: 300px){
+.felsomenu{
+	display:none;
+	}	
+.lablec{
+	display:none;
+	}	
+.cim2 {
+	font-size:30px;
+	}		
+
+@media (max-width: 420px){
+.felsomenu{
+	display:none;
+	}	
+.lablec{
+	display:none;
+	}	
+.fkozep {
+	top:10%;
+	}
+	
+	
+.cont {
+  width: 200px;
+  text-align: center;
+  margin: 10px auto;
+  padding: 10px;
+  box-shadow: 1px 1px 3px black;
+  background-color: rgb(218, 218, 201);
+  border-radius: 10px;
+}
+div#appdd {
+    text-align: center;
+}
+div.a {
+  user-select: none;
+  border-radius: 6px;
+  box-shadow: 1px 1px 3px black;
+  display: block;
+  cursor: grab;
+  margin: 6px;
+  padding: 7px;
+  background-color: rgb(200, 225, 216);
+  text-shadow: 1px 1px 3px rgb(85, 85, 85);
+  color: rgb(48, 36, 28);
+}

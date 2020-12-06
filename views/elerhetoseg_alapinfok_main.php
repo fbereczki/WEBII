@@ -1,5 +1,5 @@
 <h2>
     <br>Alapinfók:<br>
-    <br>Alapinfó 1<br>
-    <br>Alapinfó 2<br>
+    <br>Ez egy teszt weboldal<br>
+    <br>Ez egy beadando weboldal<br>
 </h2>
